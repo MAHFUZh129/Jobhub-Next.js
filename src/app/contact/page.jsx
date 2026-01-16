@@ -1,6 +1,8 @@
+import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+
 export default function ContactPage() {
   return (
-    <section className="min-h-screen bg-gray-50 py-20">
+    <div className="min-h-screen bg-gray-50 py-20">
       <div className="max-w-6xl mx-auto px-4">
 
         {/* Header */}
@@ -15,7 +17,7 @@ export default function ContactPage() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          
+
           {/* Contact Info */}
           <div className="bg-white p-8 rounded-lg shadow">
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">
@@ -27,15 +29,26 @@ export default function ContactPage() {
               message directly through the form.
             </p>
 
-            <ul className="space-y-4 text-gray-600">
-              <li>
-                <span className="font-semibold">📍 Address:</span> Dhaka, Bangladesh
+            <ul className="space-y-5 text-gray-600">
+              <li className="flex items-center gap-3">
+                <FaMapMarkerAlt className="text-blue-600 text-lg" />
+                <span>
+                  <strong>Address:</strong> Dhaka, Bangladesh
+                </span>
               </li>
-              <li>
-                <span className="font-semibold">📧 Email:</span> support@scic.com
+
+              <li className="flex items-center gap-3">
+                <FaEnvelope className="text-blue-600 text-lg" />
+                <span>
+                  <strong>Email:</strong> support@scic.com
+                </span>
               </li>
-              <li>
-                <span className="font-semibold">📞 Phone:</span> +880 1234-567890
+
+              <li className="flex items-center gap-3">
+                <FaPhoneAlt className="text-blue-600 text-lg" />
+                <span>
+                  <strong>Phone:</strong> +880 1234-567890
+                </span>
               </li>
             </ul>
           </div>
@@ -82,16 +95,16 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition"
+                className="w-full flex items-center justify-center gap-2 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition"
               >
+                <FaPaperPlane />
                 Send Message
               </button>
             </form>
           </div>
 
         </div>
-
       </div>
-    </section>
+    </div>
   );
 }

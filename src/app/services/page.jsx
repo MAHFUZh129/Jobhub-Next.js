@@ -1,6 +1,15 @@
+import {
+  FaBriefcase,
+  FaInfoCircle,
+  FaLock,
+  FaPlusCircle,
+  FaMobileAlt,
+  FaRocket,
+} from "react-icons/fa";
+
 export default function Services() {
   return (
-    <section className="min-h-screen bg-gray-50 py-20">
+    <div className="min-h-screen bg-gray-50 py-20">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Header */}
@@ -17,75 +26,92 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid gap-8 md:grid-cols-3">
 
-          {/* Service Card 1 */}
+          {/* Card 1 */}
           <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <FaBriefcase className="text-4xl text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800">
               Job Listings
             </h3>
-            <p className="mt-4 text-gray-600">
-              Browse a wide range of job opportunities from trusted companies
-              across multiple industries.
+            <p className="mt-3 text-gray-600">
+              Browse a wide range of job opportunities from trusted companies.
             </p>
+            <button className="mt-5 text-blue-600 font-semibold hover:underline">
+              View Details →
+            </button>
           </div>
 
-          {/* Service Card 2 */}
+          {/* Card 2 */}
           <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <FaInfoCircle className="text-4xl text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800">
               Job Details
             </h3>
-            <p className="mt-4 text-gray-600">
-              View complete job descriptions, requirements, salary range,
-              and company information in one place.
+            <p className="mt-3 text-gray-600">
+              View complete job descriptions, salary, and company info.
             </p>
+            <button className="mt-5 text-blue-600 font-semibold hover:underline">
+              View Details →
+            </button>
           </div>
 
-          {/* Service Card 3 */}
+          {/* Card 3 */}
           <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <FaLock className="text-4xl text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800">
               Secure Access
             </h3>
-            <p className="mt-4 text-gray-600">
-              A simple authentication system ensures protected access to
-              features like adding new job listings.
+            <p className="mt-3 text-gray-600">
+              Protected access for adding and managing job posts.
             </p>
+            <button className="mt-5 text-blue-600 font-semibold hover:underline">
+              View Details →
+            </button>
           </div>
 
-          {/* Service Card 4 */}
+          {/* Card 4 */}
           <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <FaPlusCircle className="text-4xl text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800">
               Add New Jobs
             </h3>
-            <p className="mt-4 text-gray-600">
-              Authenticated users can easily post new job opportunities using
-              a simple and user-friendly form.
+            <p className="mt-3 text-gray-600">
+              Easily post new job opportunities with a simple form.
             </p>
+            <button className="mt-5 text-blue-600 font-semibold hover:underline">
+              View Details →
+            </button>
           </div>
 
-          {/* Service Card 5 */}
+          {/* Card 5 */}
           <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <FaMobileAlt className="text-4xl text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800">
               Responsive Design
             </h3>
-            <p className="mt-4 text-gray-600">
-              Fully responsive layout that works smoothly on mobile, tablet,
-              and desktop devices.
+            <p className="mt-3 text-gray-600">
+              Smooth experience on mobile, tablet, and desktop.
             </p>
+            <button className="mt-5 text-blue-600 font-semibold hover:underline">
+              View Details →
+            </button>
           </div>
 
-          {/* Service Card 6 */}
+          {/* Card 6 */}
           <div className="bg-white p-8 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <FaRocket className="text-4xl text-blue-600 mb-4" />
+            <h3 className="text-xl font-semibold text-gray-800">
               Fast Performance
             </h3>
-            <p className="mt-4 text-gray-600">
-              Built with Next.js App Router to ensure fast loading and smooth
-              navigation across pages.
+            <p className="mt-3 text-gray-600">
+              Optimized with Next.js for fast loading and navigation.
             </p>
+            <button className="mt-5 text-blue-600 font-semibold hover:underline">
+              View Details →
+            </button>
           </div>
 
         </div>
-
       </div>
-    </section>
+    </div>
   );
 }
