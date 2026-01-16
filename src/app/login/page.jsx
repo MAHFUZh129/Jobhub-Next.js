@@ -45,7 +45,7 @@ export default function LoginPage() {
                         <input
                             name="email"
                             type="email"
-                            placeholder="admin@jobportal"
+                            placeholder="user@jobportal"
                             required
                             className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />

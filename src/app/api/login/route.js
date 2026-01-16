@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(req) {
   const { email, password } = await req.json();
 
-  if (email === 'admin@jobportal.com' && password === '123456') {
+  if (email === 'orin@mh.com' && password === 'Orin135mh') {
     const res = NextResponse.json({ success: true });
 
     res.cookies.set('auth', 'true', {

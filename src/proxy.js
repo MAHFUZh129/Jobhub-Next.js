@@ -16,7 +16,6 @@ export function proxy(request) {
   return NextResponse.next();
 }
 
-// কোন route এ middleware চলবে
 export const config = {
   matcher: ["/add-job"],
 };

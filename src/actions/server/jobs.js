@@ -31,7 +31,6 @@ export const getSingleJob= async (id) => {
 
     if (!job) return null;
 
-    //  serialize ObjectId
     return {
         ...job,
         _id: job._id.toString(),
