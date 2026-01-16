@@ -5,11 +5,10 @@ import Hero from "@/components/landingPage/Hero";
 import HowItWorks from "@/components/landingPage/HowItWorks";
 import Stats from "@/components/landingPage/Stats";
 import Testimonials from "@/components/landingPage/Testimonials";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="mi">
+    <div className="mt-18 ">
      <Hero></Hero>
      <Stats></Stats>
      <Features></Features>

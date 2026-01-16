@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links = [
   { name: "Home", path: "/" },
+  { name: "Jobs", path: "/jobs" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Contact", path: "/contact" },
@@ -13,7 +14,22 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [loggedIn, setLoggedIn] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/auth")
+      .then(res => res.json())
+      .then(data => setLoggedIn(data.loggedIn));
+  }, []);
+
+
+  const handleLogout = async () => {
+    await fetch("/api/logout", { method: "POST" });
+    setLoggedIn(false);
+    router.push("/login");
+  };
 
   return (
     <header className="fixed top-0 left-0 py-1 w-full bg-white/80 backdrop-blur shadow z-50">
@@ -44,15 +60,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA Button */}
+        {/* Login / Logout Button */}
         <div className="hidden md:block">
+          {loggedIn ? (
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 rounded-md bg-red-500 text-white hover:bg-red-600 transition"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+            >
+              Login
+            </Link>
+          )}
+        </div>
+
+        {/* CTA Button */}
+        {/* <div className="hidden md:block">
           <Link
             href="/login"
             className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
           >
             Login
           </Link>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Button */}
         <button
@@ -82,12 +117,27 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <Link
+            {loggedIn ? (
+              <button
+                onClick={handleLogout}
+                className="m-4 py-2 rounded bg-red-500 text-white"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="m-4 text-center py-2 rounded bg-blue-600 text-white"
+              >
+                Login
+              </Link>
+            )}
+            {/* <Link
               href="/login"
               className="m-4 text-center py-2 rounded bg-blue-600 text-white"
             >
               Login
-            </Link>
+            </Link> */}
           </ul>
         </div>
       )}

@@ -19,7 +19,7 @@ export default function Hero() {
 
           <div className="mt-8 flex gap-4">
             <Link
-              href="/items"
+              href="/jobs"
               className="px-6 py-3 rounded-md bg-white text-blue-700 font-semibold hover:bg-gray-100 transition"
             >
               Browse Jobs
