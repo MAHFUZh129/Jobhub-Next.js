@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const links = [
   { name: "Home", path: "/" },
@@ -19,16 +20,26 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    fetch("/api/auth")
+    fetch("/api/auth",{cache: "no-store"})
       .then(res => res.json())
       .then(data => setLoggedIn(data.loggedIn));
-  }, []);
+      
+  }, [pathname]);
 
 
   const handleLogout = async () => {
-    await fetch("/api/logout", { method: "POST" });
+   const res= await fetch("/api/logout", { method: "POST" });
+    if (res.ok) {
+    toast.success("Logged out successfully!!");
     setLoggedIn(false);
     router.push("/login");
+  } else {
+    toast.error("Logout failed!");
+  }
+    
+    // setLoggedIn(false);
+
+    // router.push("/login");
   };
 
   return (
