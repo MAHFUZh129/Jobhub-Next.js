@@ -1,14 +1,25 @@
 # JobHub – Job Portal Web Application
 
-### 📝 Project Description
+## 📝 Project Description
 JobHub is a modern, user-friendly job portal designed to connect job seekers with the right career opportunities in a simple and efficient way. The platform allows users to explore a wide range of job listings, view detailed job information, and apply for positions with ease.
 
 Built using Next.js App Router and modern web technologies, JobHub focuses on clean UI, fast performance, and a smooth user experience. Job seekers can browse jobs without creating an account, while certain features—such as adding new job postings—are protected through basic authentication to ensure security and data integrity.
+
 ---
+### 🛠️ Tech Stack
+
+* **Next.js (App Router):** Used for building the application with modern routing and server-side features.
+* **React:** Used to create reusable and interactive UI components.
+* **Tailwind CSS:** Used for fast and responsive UI styling.
+* **MongoDB:** Used as the database to store and manage job-related data.
+* **Next.js Server Actions:** Used for server-side data fetching and mutations.
+* **React Icons / Lucide Icons:** Used for consistent and modern UI icons.
+* **React Toastify:** Used to display success and error notifications.
+
 
 ### ⚙️ Setup & Installation
 
-Project-ti tomar local machine-e chalanor jonno niche deya step gulo follow koro:
+Follow the steps to run the project on your local machine:
 
 1.  **Repository Clone koro:**
     ```bash
@@ -22,49 +33,57 @@ Project-ti tomar local machine-e chalanor jonno niche deya step gulo follow koro
     ```
 
 3.  **Environment Variables Set koro:**
-    Root folder-e `.env` nam-e ekta file toiri koro ebong niche deya format follow koro:
+     Create `.env` file in root folder and follow put the followings:
     ```env
-    PORT=5000
-    DATABASE_URL=tomar_database_link
-    SECRET_KEY=tomar_secret_key
+    DBNAME=...
+    MONGODB_URI=...
     ```
 
 4.  **Project Start koro:**
     ```bash
-    npm start
+    npm run dev
     ```
 
 ---
 
 ### 🛤️ Route Summary
 
-Niche project-er main API endpoints gulo deya holo:
+Main server actions used in this project:
 
-| Method | Endpoint | Description |
+| Action Type | Action Name | Description |
 | :--- | :--- | :--- |
-| **GET** | `/api/items` | Shob data fetch korar jonno |
-| **POST** | `/api/items` | Notun data add korar jonno |
-| **PUT** | `/api/items/:id` | Specific data update korar jonno |
-| **DELETE** | `/api/items/:id` | Data remove korar jonno |
+| **GET** | `getJobs()` | Fetch all available job listings |
+| **POST** | `addJobs(job)` | Add a new job posting |
+| **GET** | `getSingleJob(id)` | Fetch details of a specific job |
 
 ---
 
 ### ✨ Implemented Features
-* **User Auth:** Login ebong Registration system.
-* **CRUD Operations:** Data toiri, pora, update ebong delete korar shubidha.
-* **Database Integration:** MongoDB/PostgreSQL er maddhome data store kora.
-* **Security:** JWT token ebong password hashing use kora hoyeche.
-* **Responsive UI:** Mobile ebong Desktop er jonno optimize kora.
+
+* **Public Job Listings:** Users can browse all available job listings without creating an account.
+* **Job Details Page:** Each job has a dedicated details page displaying full job information.
+* **Add New Job (Protected):** Only authenticated users can add new job postings.
+* **Server Actions:** Next.js Server Actions are used for data fetching and data mutation.
+* **Database Integration:** MongoDB is used to store and manage job-related data.
+* **Responsive UI:** The application is fully responsive and optimized for mobile, tablet, and desktop devices.
 
 ---
 
 ### 🔍 Brief Explanation of Features
 
-* **Secure Data Handling:**
-    User-der password sorasori save na kore hash (bcrypt) kore save kora hoy, jate data secure thake.
-    
-* **Real-time Interaction:**
-    API-r maddhome khub druto server-er sathe jogajog kora jay ebong user instantly feedback pay.
-    
-* **Middleware Protection:**
-    Kichu specific route shudhu authenticated user-ra access korte parbe, ja middleware diye control kora hoyeche.[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Server-Side Data Handling:**  
+  Job data is fetched and managed using Next.js Server Actions, ensuring secure and efficient server-side operations.
+
+* **Fast User Interaction:**  
+  Server Actions allow seamless communication between the client and server, providing quick responses and smooth user experience.
+
+* **Protected Functionality:**  
+  Certain features, such as adding new job postings, are restricted to authenticated users to prevent unauthorized access.
+
+* **Database Management:**  
+  MongoDB is used to store and manage job-related data in a structured and scalable way.
+
+* **Responsive and Clean UI:**  
+  The user interface is designed to be responsive and user-friendly across all screen sizes.
+
+
